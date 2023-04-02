@@ -4,12 +4,13 @@ This is a WebSite scrapping script
 from scrape import scrapes, extract
 from store import store
 
+# Get the url to scrape
 URL = "http://programmer100.pythonanywhere.com/"
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 '
                   '(KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
-
+# Calling the module
 if __name__ == "__main__":
     context = scrapes(URL)
     extraction = extract(context)
