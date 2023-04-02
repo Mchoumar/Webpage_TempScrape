@@ -21,16 +21,5 @@ def store(extract):
     print("Data stored!")
 
 
-def data_read():
-    """Reads the data in a file"""
-    with open("data.txt", "r") as file:
-        context = file.readlines()
-
-    # filters the data
-    context = [item.strip('\n').split(",") for item in context]
-
-    return context
-
-
 if __name__ == "__main__":
     print(data_read())

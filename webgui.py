@@ -1,18 +1,11 @@
 # This is a webpage to present a graph of the acquired data
 import streamlit as st
-import plotly.express as px
-from store import data_read
+import plotly.express as ex
+import pandas as px
 
-# Reads the data and filters them
-texts = data_read()
-date, temp = [], []
-
-# filters the data
-for index, text in enumerate(texts):
-    if index != 0:
-        date.append(text[0])
-        temp.append(text[1])
+# Reads the data
+data = px.read_csv("data.txt")
 
 # figure setup
-figure = px.line(x=date, y=temp, labels={"x": "Date", "y": "Temperature"})
+figure = ex.line(x=data['date'], y=data['temperature'], labels={"x": "Date", "y": "Temperature"})
 st.plotly_chart(figure)
