@@ -22,4 +22,4 @@ def store(extract):
 
 
 if __name__ == "__main__":
-    print(data_read())
+    print(store("23-04-02-17-49-28,19"))

@@ -5,11 +5,15 @@ This script get the url data and extract the temperature
 import requests
 from selectorlib import Extractor
 
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 '
+                  '(KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+
 
 def scrapes(url):
     """Scraps the data from the website"""
     print("Extracting...")
-    request = requests.get(url)
+    request = requests.get(url, headers=HEADERS)
     source = request.text
 
     return source
